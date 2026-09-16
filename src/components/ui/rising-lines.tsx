@@ -10,19 +10,18 @@ const RenderTarget = {
 }
 
 function __OriginkitBase_RisingLines(props: Props) {
-    props = { ...COMPONENT_DEFAULTS, ...props } as Required<Props>
     const {
-        className,
-        particles,
-        color,
-        showHorizon,
-        horizonColor,
-        riseSpeed: riseSpeedRaw,
-        opacity: opacityRaw,
-        horizonOpacity: horizonOpacityRaw,
-        scale: scaleRaw,
+        className = "",
+        particles = 500,
+        color = "#DF44F8",
+        showHorizon = true,
+        horizonColor = "#C918F8",
+        riseSpeed: riseSpeedRaw = 25,
+        opacity: opacityRaw = 100,
+        horizonOpacity: horizonOpacityRaw = 85,
+        scale: scaleRaw = 7,
         style,
-    } = props
+    } = { ...COMPONENT_DEFAULTS, ...props }
 
     const riseSpeed = riseSpeedRaw / 100
     const opacity = opacityRaw / 100
