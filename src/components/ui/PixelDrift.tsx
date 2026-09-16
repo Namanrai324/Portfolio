@@ -88,7 +88,7 @@ function resolveDuration(trans: TransitionValue | undefined): number {
 }
 
 function __OriginkitBase_ParticleText(props: Props) {
-    props = { ...COMPONENT_DEFAULTS, ...props }
+    props = { ...COMPONENT_DEFAULTS, ...props } as Props
     const {
         text,
         colors,
@@ -181,15 +181,15 @@ function __OriginkitBase_ParticleText(props: Props) {
 
             const maxW = W * 0.92
             const maxH = H * 0.92
-            let effectiveSize = Math.max(8, fontSize)
+            let effectiveSize = Math.max(8, fontSize!)
             if (autoFit) {
                 effectiveSize = fitFontSize(
                     offCtx,
                     text || "",
-                    fontFamily,
+                    fontFamily!,
                     maxW,
                     maxH,
-                    Math.max(8, fontSize)
+                    Math.max(8, fontSize!)
                 )
             }
 
@@ -218,7 +218,7 @@ function __OriginkitBase_ParticleText(props: Props) {
             )
             const data = img.data
 
-            const pCount = Math.max(1, Math.min(100, particleCount))
+            const pCount = Math.max(1, Math.min(100, particleCount!))
             // By lowering the numerator, stride becomes smaller, meaning higher resolution
             const stride = Math.max(1, Math.round(100 / pCount))
 
@@ -469,7 +469,7 @@ function __OriginkitBase_ParticleText(props: Props) {
 
             const pr = pointerRef.current
 
-            const drawSize = Math.max(1, particleSize / 2.5)
+            const drawSize = Math.max(1, particleSize! / 2.5)
             const half = drawSize / 2
 
             const now =

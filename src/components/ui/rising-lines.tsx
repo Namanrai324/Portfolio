@@ -10,7 +10,7 @@ const RenderTarget = {
 }
 
 function __OriginkitBase_RisingLines(props: Props) {
-    props = { ...COMPONENT_DEFAULTS, ...props }
+    props = { ...COMPONENT_DEFAULTS, ...props } as Required<Props>
     const {
         className,
         particles,

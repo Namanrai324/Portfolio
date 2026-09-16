@@ -59,8 +59,10 @@ export default function Magnet({
     };
   }, [padding, strength]);
 
+  const Comp = Component as any;
+
   return (
-    <Component
+    <Comp
       ref={ref as any}
       className={className}
       style={{
@@ -70,6 +72,6 @@ export default function Magnet({
       }}
     >
       {children}
-    </Component>
+    </Comp>
   );
 }

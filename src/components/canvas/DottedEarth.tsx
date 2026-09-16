@@ -50,12 +50,14 @@ export default function DottedEarth() {
   return (
     <points ref={pointsRef}>
       <bufferGeometry>
+        {/* @ts-ignore */}
         <bufferAttribute
           attach="attributes-position"
           count={positions.length / 3}
           array={positions}
           itemSize={3}
         />
+        {/* @ts-ignore */}
         <bufferAttribute
           attach="attributes-color"
           count={colors.length / 3}
