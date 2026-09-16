@@ -1,0 +1,80 @@
+.glitch-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.glitch {
+  position: relative;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+    0.025em 0.04em 0 #fffc00;
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+  }
+  20% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+  }
+  40% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+  }
+  60% {
+    clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+  }
+  80% {
+    clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+  }
+  100% {
+    clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+  }
+  20% {
+    clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+  }
+  40% {
+    clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
+  }
+  60% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+  }
+  80% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 60%, 0 60%);
+  }
+  100% {
+    clip-path: polygon(0 30%, 100% 30%, 100% 30%, 0 30%);
+  }
+}
